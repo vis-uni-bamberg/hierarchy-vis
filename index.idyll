@@ -1,0 +1,24 @@
+[meta title:"Hierarchy Vis" description:"Short description of your project" /]
+
+[Header
+  fullWidth:true
+  title:"Effective Visualization of Hierarchies"
+  subtitle:"Using Indented Plots and Icicle Plots"
+  author:"Fabian Beck"
+  authorLink:"https://github.com/fabian-beck"
+  background:"#110934"
+  color:"#ffffff"
+   /]
+
+## Introduction
+
+When it comes to visualizing hierarchically organized data, you see often [Annotation][Graphic]Nodes drawn as circles in layers and being connected by links[/Graphic]*node-link diagrams*[/Annotation] and [Annotation][Graphic]Recursively subdivided boxes[/Graphic]*treemaps*[/Annotation] promoted as the main types of diagrams. They are definitly interesting options, but two other techniques—sometimes forgotton—might be the true work horses of hierarchy visualization: 
+
+[p className:'centered'] **Indented Plots** and **Icicle Plots** [/p]
+
+
+## Indented Plots
+
+So simple and known from file browsers and other user interfaces, indented plots might not even be considered a visualization, but just a user interface component like a list. Their characteristic feature is that the elements of the hierarchy are vertically listed below each other with **increasing horizontal intentation per level**. Child elements directly follow their parents.
+
+[IndentedD3Component /]

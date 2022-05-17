@@ -1,0 +1,25 @@
+:root {
+  /* color scheme created with https://www.w3schools.com/colors/colors_compound.asp */
+  --primary: #347B98;
+  --primary-light: #D4EDF7;
+  --secondary: #4424D6;
+  --secondary-dark: #110934;
+  --highlighting: #FB9902;
+}
+
+.centered {
+  text-align: center;
+  background-color: var(--highlighting);;
+  padding: 1rem;
+}
+
+.d3-component svg {
+  background: #ddd;
+  max-height: 300px;
+}
+
+@media all and (max-width: 1000px) {
+  .d3-component svg {
+    max-height: 200px;
+  }
+}
