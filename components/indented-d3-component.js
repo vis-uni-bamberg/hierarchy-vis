@@ -6,17 +6,41 @@ const size = 600;
 
 class IndentedD3Component extends D3Component {
   initialize(node, props) {
-    const svg = (this.svg = d3.select(node).append('svg'));
-    svg
-      .attr('viewBox', `0 0 ${size} ${size}`)
-      .style('width', '100%')
-      .style('height', 'auto');
+    var root = d3.hierarchy({
+      name: "rootNode",
+      children: [
+        {
+          name: "child1"
+        },
+        {
+          name: "child2",
+          children: [
+            { name: "grandChild1" },
+            { name: "grandChild2" },
+            { name: "grandChild3" },
+            { name: "grandChild4" }
+          ]
+        },
+        {
+          name: "child3",
+          children: [
+            { name: "grandChild5" },
+            { name: "grandChild6" },
+          ]
+        }
+      ]
+    });
 
-    svg
-      .append('text')
-      .attr('x', 10)
-      .attr('y', 10)
-      .text('...')
+    const svg = (this.svg = d3.select(node).append('svg'));
+    svg.attr('viewBox', `0 0 ${size} ${size}`)
+
+    svg.selectAll("text")
+      .data(root.descendants())
+      .enter()
+      .append("text")
+      .attr("transform", (d, i) => `translate(${d.depth * 50},${i * 50})`)
+      .text(d => d.data.name)
+
   }
 
   update(props, oldProps) {
