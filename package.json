@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "idyll": {
-    "theme": "idyll",
+    "theme": "default",
     "layout": "centered",
     "css": "styles.css",
     "authorView": false
@@ -15,11 +15,11 @@
     "publish": "idyll publish"
   },
   "dependencies": {
-    "d3": "7",
+    "d3": "5",
     "d3-selection": "^2.0.0",
     "d3-transition": "^2.0.0",
-    "idyll": "6.0.0-alpha.4",
-    "idyll-d3-component": "^2.1.1"
+    "idyll": "5.7.6",
+    "idyll-d3-component": "2.0.3"
   },
   "devDependencies": {
     "gh-pages": "^0.12.0"
