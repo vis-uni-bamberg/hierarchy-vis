@@ -8,6 +8,13 @@ const indentation = 40
 const lineOffsetX = 23
 const lineOffsetY = 10
 const animationDuration = 1000
+const fileTypeColors = {
+  "": "black",
+  "csv": "#347B98",
+  "jpg": "#FB9902",
+  "json": "#347B98",
+  "md": "#4424D6"
+}
 
 let element
 
@@ -88,6 +95,7 @@ class IndentedD3Component extends D3Component {
       .transition()
       .duration(animationDuration)
       .style("opacity", props.index > 1 ? 1 : 0)
+      .style("fill", d => props.index > 2 ? fileTypeColors[d.data.name.split(".")[1]] : "black")
   }
 }
 
