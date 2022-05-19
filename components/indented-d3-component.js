@@ -2,48 +2,92 @@ import React from 'react';
 import D3Component from 'idyll-d3-component';
 import * as d3 from 'd3';
 
-const size = 600;
+const size = 600
+const elementHeight = 35
+const indentation = 40
+const lineOffsetX = 23
+const lineOffsetY = 10
+const animationDuration = 1000
+
+let element
 
 class IndentedD3Component extends D3Component {
   initialize(node, props) {
     var root = d3.hierarchy({
-      name: "rootNode",
+      name: "files",
       children: [
+
         {
-          name: "child1"
-        },
-        {
-          name: "child2",
+          name: "images",
           children: [
-            { name: "grandChild1" },
-            { name: "grandChild2" },
-            { name: "grandChild3" },
-            { name: "grandChild4" }
+            { name: "01.jpg" },
+            { name: "02.jpg" },
+            { name: "03.jpg" },
+            { name: "04.jpg" }
           ]
         },
         {
-          name: "child3",
+          name: "data",
           children: [
-            { name: "grandChild5" },
-            { name: "grandChild6" },
+            { name: "data.csv" },
+            { name: "data.json" },
           ]
+        },
+        {
+          name: "readme.md"
         }
       ]
     });
 
-    const svg = (this.svg = d3.select(node).append('svg'));
-    svg.attr('viewBox', `0 0 ${size} ${size}`)
+    root.sum(d => 1)
+    let nodeArray = []
+    root.eachBefore(d => nodeArray.push(d))
 
-    svg.selectAll("text")
-      .data(root.descendants())
+    const svg = (this.svg = d3.select(node).append('svg'));
+    svg
+      .attr("viewBox", `0 0 ${size} ${size}`)
+      .attr("class", "indented-plot")
+
+    element = svg.selectAll("g")
+      .data(nodeArray)
       .enter()
-      .append("text")
-      .attr("transform", (d, i) => `translate(${d.depth * 50},${i * 50})`)
+      .append("g")
+      .attr("transform", (d, i) =>
+        `translate(${(d.depth + 1) * indentation},${(i + 1) * elementHeight})`
+      )
+
+    element.append("text")
+      .attr("tranform", "translate(20, 10)")
       .text(d => d.data.name)
 
+    element.append("line")
+      .style("opacity", 0)
+      .attr("x1", lineOffsetX)
+      .attr("y1", lineOffsetY)
+      .attr("x2", lineOffsetX)
+      .attr("y2", d =>
+        (d.value - 1) * elementHeight + lineOffsetY
+      )
+
+    element.append("circle")
+      .style("opacity", 0)
+      .attr("cx", -16.5)
+      .attr("cy", -6)
+      .attr("r", 5)
+
+    console.log(props)
   }
 
   update(props, oldProps) {
+    element.selectAll("line")
+      .transition()
+      .duration(animationDuration)
+      .style("opacity", props.index > 0 ? 0.3 : 0)
+
+    element.selectAll("circle")
+      .transition()
+      .duration(animationDuration)
+      .style("opacity", props.index > 1 ? 1 : 0)
   }
 }
 

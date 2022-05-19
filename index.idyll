@@ -21,15 +21,34 @@ When it comes to visualizing hierarchically organized data, you often see [Annot
 
 So simple and known from file browsers and other user interfaces, indented plots might not even be considered a visualization, but just a user interface component like a list. Their characteristic feature is that the elements of the hierarchy are vertically listed below each other with **increasing horizontal intentation per level**. Child elements directly follow their parents.
 
-[Scroller]
+[var name:"scrollerIndex" value:0 /]
+[Scroller currentStep:scrollerIndex]
   [Graphic style:`{width: 600, margin: 'auto'}`]
-      [IndentedD3Component /]
+      [IndentedD3Component index:scrollerIndex/]
   [/Graphic]
 
   [Step]
-  ### The Base Layout
-  
-  Let's visualize a simple hierarchy showing a directory of files as indented plot.
+    ### Base Layout
+    
+    Let's visualize a simple hierarchy showing a directory of files as an indented plot. Just the labels of the files and indentation is sufficient to see the hierarchical structure.
+  [/Step]
+
+  [Step]
+    ### Hierarchy Levels
+    
+    Additional lines can mark the levels of the hierarchy and help trace which child nodes belong to a parent.
+  [/Step]
+
+  [Step]
+    ### Visual Nodes
+    
+    We can also draw circles to get a graphical representation of each node.
+  [/Step]
+
+  [Step]
+    ### Encode Node Types
+    
+    These can be used, for instance, to visualize the type of the node as a color.
   [/Step]
 
 [/Scroller]

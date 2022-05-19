@@ -23,3 +23,12 @@
     max-height: 200px;
   }
 }
+
+.idyll-scroll-text .idyll-step {
+  padding: 0rem 2rem;
+}
+
+.indented-plot line {
+  stroke: black;
+  stroke-width: 2px;
+}
