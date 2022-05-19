@@ -7,6 +7,11 @@
   --highlighting: #FB9902;
 }
 
+p {
+  text-align: justify;
+  hyphens: auto;
+}
+
 .centered {
   text-align: center;
   background-color: var(--highlighting);;
