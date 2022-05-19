@@ -16,7 +16,6 @@ When it comes to visualizing hierarchically organized data, you often see [Annot
 
 [p className:'centered'] **Indented Plots** and **Icicle Plots** [/p]
 
-
 ## Indented Plots
 
 So simple and known from file browsers and other user interfaces, indented plots might not even be considered a visualization, but just a user interface component like a list. Their characteristic feature is that the elements of the hierarchy are vertically listed below each other with **increasing horizontal intentation per level**. Child elements directly follow their parents.
@@ -59,5 +58,8 @@ So simple and known from file browsers and other user interfaces, indented plots
 
 [/Scroller]
 
+### Comparison to Node-Link Diagrams
+
+Generally, an indented plot can be considered a variant of node-link diagram, in a simple layout where all nodes are placed below each other. You may have notices that the list-like layout makes it straightforward to print labels for each node, and there is sufficient space for longer labels. In contrast, most other node-link layouts, though being slightly more compact, run into certain problems for placing labels. Especially diffult to label are those that use a radial layout, also because rotated texts gets more difficult to read for increasing rotation angles.
 
 ## Icicle Plots

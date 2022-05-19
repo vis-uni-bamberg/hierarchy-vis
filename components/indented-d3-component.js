@@ -37,7 +37,7 @@ class IndentedD3Component extends D3Component {
           name: "data",
           children: [
             { name: "data.csv", size: 0.3 },
-            { name: "data.json", size: 10.5 },
+            { name: "raw_data.json", size: 10.5 },
           ]
         },
         { name: "readme.md", size: 0.1 }
