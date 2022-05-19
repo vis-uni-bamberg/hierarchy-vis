@@ -27,29 +27,33 @@ class IndentedD3Component extends D3Component {
         {
           name: "images",
           children: [
-            { name: "01.jpg" },
-            { name: "02.jpg" },
-            { name: "03.jpg" },
-            { name: "04.jpg" }
+            { name: "01.jpg", size: 1.2 },
+            { name: "02.jpg", size: 0.7 },
+            { name: "03.jpg", size: 3.7 },
+            { name: "04.jpg", size: 2.7 }
           ]
         },
         {
           name: "data",
           children: [
-            { name: "data.csv" },
-            { name: "data.json" },
+            { name: "data.csv", size: 0.3 },
+            { name: "data.json", size: 10.5 },
           ]
         },
-        {
-          name: "readme.md"
-        }
+        { name: "readme.md", size: 0.1 }
       ]
     });
 
     root.sum(d => 1)
     let nodeArray = []
     root.eachBefore(d => nodeArray.push(d))
-
+    root.eachAfter(
+      d => d.size = d.children? d.children.reduce(
+        (sum, child) => sum + child.size
+        , 0
+      ): d.data.size
+    )
+    
     const svg = (this.svg = d3.select(node).append('svg'));
     svg
       .attr("viewBox", `0 0 ${size} ${size}`)
@@ -78,7 +82,7 @@ class IndentedD3Component extends D3Component {
 
     element.append("circle")
       .style("opacity", 0)
-      .attr("cx", -16.5)
+      .attr("cx", -16.75)
       .attr("cy", -6)
       .attr("r", 5)
 
@@ -96,6 +100,7 @@ class IndentedD3Component extends D3Component {
       .duration(animationDuration)
       .style("opacity", props.index > 1 ? 1 : 0)
       .style("fill", d => props.index > 2 ? fileTypeColors[d.data.name.split(".")[1]] : "black")
+      .attr("r", d => props.index > 3 ? Math.sqrt(d.size * 5) : 5)
   }
 }
 

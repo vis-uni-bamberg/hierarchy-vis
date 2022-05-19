@@ -46,9 +46,15 @@ So simple and known from file browsers and other user interfaces, indented plots
   [/Step]
 
   [Step]
-    ### Encode Node Types
+    ### Node Types
     
     These can be used, for instance, to visualize the type of the node as a color.
+  [/Step]
+
+  [Step]
+    ### Node Size
+    
+    And, very useful for files, the area of the circles may encode the sizes of the respective files and directories.
   [/Step]
 
 [/Scroller]
