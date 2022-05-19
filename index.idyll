@@ -18,6 +18,10 @@ When it comes to visualizing hierarchically organized data, you often see [Annot
 
 ## Indented Plots
 
+[Aside]
+  Not even a visualization?
+[/Aside]
+
 So simple and known from file browsers and other user interfaces, indented plots might not even be considered a visualization, but just a user interface component like a list. Their characteristic feature is that the elements of the hierarchy are vertically listed below each other with **increasing horizontal intentation per level**. Child elements directly follow their parents.
 
 [var name:"scrollerIndex" value:0 /]
@@ -60,9 +64,17 @@ So simple and known from file browsers and other user interfaces, indented plots
 
 ### Comparison to Node-Link Diagrams
 
+[Aside]
+  Yet another node-link layout?
+[/Aside]
+
 Generally, an indented plot can be considered a variant of node-link diagram, in a simple layout where all nodes are placed below each other. You may have notices that the list-like layout makes it straightforward to print labels for each node, and there is sufficient space for longer labels. In contrast, most other node-link layouts, though being slightly more compact, run into certain problems for placing labels. Especially diffult to label are those that use a radial layout, also because rotated texts gets more difficult to read for increasing rotation angles.
 
 ## Icicle Plots
+
+[Aside]
+  Icicles, flames, and sunbursts
+[/Aside]
 
 In contrast to indented plots, an icicle plot focuses more on providing a good overview of the sizes of the hierarchy nodes. In this regard, it is similar to a treemap where the size of the nodes is enconded in the rectangular area they fill. But instead of nesting the nodes, the icicle plots just starts with a full-width rectangle  and attaches the child nodes below their parent as rectangle scaled according to their sizes. From a distance, these vertically appended rectangles somewhat resemble hanging icicles. If arrange from bottom to top instead (and colored in red-orange colors), they more look like flames and are sometimes called *flame graphs*, respectively. Radial variants usually go under the term *sunburst*.
 
