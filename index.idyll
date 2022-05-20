@@ -1,9 +1,9 @@
-[meta title:"Effective Visualization of Hierarchies" description:"An introduction and discussion of indented plots and iclicle plots for effectively visualizing hierarchical data." /]
+[meta title:"Effective Visualization of Hierarchies" description:"An introduction and discussion of indented charts and iclicle plots for effectively visualizing hierarchical data." /]
 
 [Header
   fullWidth:true
   title:"Effective Visualization of Hierarchies"
-  subtitle:"Using Indented Plots and Icicle Plots"
+  subtitle:"Using Indented Charts and Icicle Plots"
   author:"Fabian Beck"
   authorLink:"https://github.com/fabian-beck"
   background:"#110934"
@@ -14,15 +14,15 @@
 
 When it comes to visualizing hierarchically organized data, you often see [Annotation][Graphic]Nodes drawn as circles in layers and being connected by links[/Graphic]*node-link diagrams*[/Annotation] and [Annotation][Graphic]Recursively subdivided boxes[/Graphic]*treemaps*[/Annotation] promoted as the main types of diagrams. They are definitly interesting options, but two other techniques—sometimes forgotton—might be the true work horses of hierarchy visualization: 
 
-[p className:'centered'] **Indented Plots** and **Icicle Plots** [/p]
+[p className:'centered'] **Indented Charts** and **Icicle Plots** [/p]
 
-## Indented Plots
+## Indented Charts
 
 [Aside]
   Not even a visualization?
 [/Aside]
 
-So simple and known from file browsers and other user interfaces, indented plots might not even be considered a visualization, but just a user interface component like a list. Their characteristic feature is that the elements of the hierarchy are vertically listed below each other with **increasing horizontal intentation per level**. Child elements directly follow their parents.
+So simple and known from file browsers and other user interfaces, indented charts might not even be considered a visualization, but just a user interface component like a list. Their characteristic feature is that the elements of the hierarchy are vertically listed below each other with **increasing horizontal intentation per level**. Child elements directly follow their parents.
 
 [var name:"scrollerIndex" value:0 /]
 [Scroller currentStep:scrollerIndex]
@@ -33,7 +33,7 @@ So simple and known from file browsers and other user interfaces, indented plots
   [Step]
     ### Base Layout
     
-    Let's visualize a simple hierarchy showing a directory of files as an indented plot. Just the labels of the files and indentation is sufficient to see the hierarchical structure.
+    Let's visualize a simple hierarchy showing a directory of files as an indented charts. Just the labels of the files and indentation is sufficient to see the hierarchical structure.
   [/Step]
 
   [Step]
@@ -68,7 +68,7 @@ So simple and known from file browsers and other user interfaces, indented plots
   Yet another node-link layout?
 [/Aside]
 
-Generally, an indented plot can be considered a variant of node-link diagram, in a simple layout where all nodes are placed below each other. You may have notices that the list-like layout makes it straightforward to print labels for each node, and there is sufficient space for longer labels. In contrast, most other node-link layouts, though being slightly more compact, run into certain problems for placing labels. Especially diffult to label are those that use a radial layout, also because rotated texts gets more difficult to read for increasing rotation angles.
+Generally, an indented charts can be considered a variant of node-link diagram, in a simple layout where all nodes are placed below each other. You may have notices that the list-like layout makes it straightforward to print labels for each node, and there is sufficient space for longer labels. In contrast, most other node-link layouts, though being slightly more compact, run into certain problems for placing labels. Especially diffult to label are those that use a radial layout, also because rotated texts gets more difficult to read for increasing rotation angles.
 
 ## Icicle Plots
 
@@ -76,7 +76,7 @@ Generally, an indented plot can be considered a variant of node-link diagram, in
   Icicles, flames, and sunbursts
 [/Aside]
 
-In contrast to indented plots, an icicle plot focuses more on providing a good overview of the sizes of the hierarchy nodes. In this regard, it is similar to a treemap where the size of the nodes is enconded in the rectangular area they fill. But instead of nesting the nodes, the icicle plots just starts with a full-width rectangle  and attaches the child nodes below their parent as rectangle scaled according to their sizes. From a distance, these vertically appended rectangles somewhat resemble hanging icicles. If arrange from bottom to top instead (and colored in red-orange colors), they more look like flames and are sometimes called *flame graphs*, respectively. Radial variants usually go under the term *sunburst*.
+In contrast to indented charts, an icicle plot focuses more on providing a good overview of the sizes of the hierarchy nodes. In this regard, it is similar to a treemap where the size of the nodes is enconded in the rectangular area they fill. But instead of nesting the nodes, the icicle plots just starts with a full-width rectangle  and attaches the child nodes below their parent as rectangle scaled according to their sizes. From a distance, these vertically appended rectangles somewhat resemble hanging icicles. If arrange from bottom to top instead (and colored in red-orange colors), they more look like flames and are sometimes called *flame graphs*, respectively. Radial variants usually go under the term *sunburst*.
 
 ## About
 
