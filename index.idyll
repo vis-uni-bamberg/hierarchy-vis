@@ -78,3 +78,7 @@ Generally, an indented plot can be considered a variant of node-link diagram, in
 
 In contrast to indented plots, an icicle plot focuses more on providing a good overview of the sizes of the hierarchy nodes. In this regard, it is similar to a treemap where the size of the nodes is enconded in the rectangular area they fill. But instead of nesting the nodes, the icicle plots just starts with a full-width rectangle  and attaches the child nodes below their parent as rectangle scaled according to their sizes. From a distance, these vertically appended rectangles somewhat resemble hanging icicles. If arrange from bottom to top instead (and colored in red-orange colors), they more look like flames and are sometimes called *flame graphs*, respectively. Radial variants usually go under the term *sunburst*.
 
+## About
+
+* This article was created using [Idyll](https://idyll-lang.org).
+* The source code is available on [GitHub](https://github.com/vis-uni-bamberg/hierarchy-vis) under MIT license.
