@@ -12,9 +12,8 @@
   title:"Effective Visualization of Hierarchies"
   subtitle:"Using Indented Charts and Icicle Plots"
   author:"Fabian Beck"
+  date: "May 2022"
   authorLink:"https://github.com/fabian-beck"
-  background:"#110934"
-  color:"#ffffff"
    /]
 
 [div className:"toc"]
