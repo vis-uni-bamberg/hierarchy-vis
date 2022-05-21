@@ -1,0 +1,61 @@
+{
+  "name": "files",
+  "children": [
+    {
+      "name": "images",
+      "children": [
+        {
+          "name": "old",
+          "children": [
+            {
+              "name": "01.jpg",
+              "size": 1.8
+            },
+            {
+              "name": "02.jpg",
+              "size": 0.6
+            }
+          ]
+        },
+        {
+          "name": "01.jpg",
+          "size": 1.2
+        },
+        {
+          "name": "02.jpg",
+          "size": 0.7
+        },
+        {
+          "name": "03.jpg",
+          "size": 3.7
+        },
+        {
+          "name": "04.jpg",
+          "size": 2.7
+        }
+      ]
+    },
+    {
+      "name": "data",
+      "children": [
+        {
+          "name": "raw",
+          "children": [
+            {
+              "name": "raw_data.json",
+              "size": 10.5
+            }
+          ]
+        },
+        {
+          "name": "data.csv",
+          "size": 1.3
+        }
+      ]
+    },
+    {
+      "name": "readme.md",
+      "size": 0.1
+    }
+  ]
+}

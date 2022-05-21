@@ -5,6 +5,8 @@
   --secondary: #4424D6;
   --secondary-dark: #110934;
   --highlighting: #FB9902;
+  --light-gray: #cccccc;
+  --gray: #999999;
 }
 
 p {
@@ -44,4 +46,10 @@ p {
 .indented-plot line {
   stroke: black;
   stroke-width: 2px;
+}
+
+.icicle-plot rect {
+  stroke: white;
+  stroke-width: 1px;
+  opacity: 0.5;
 }
