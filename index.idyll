@@ -91,16 +91,32 @@ In contrast to indented charts, an icicle plot focuses more on providing a good 
   [Step]
     ### Base Layout
     
-   ...
+   But let's first ignore the sizes—assume all files in our example have the same size. In the resulting base layout, the root node is placed at the top width full width. The level below subdivided into the respective directories and files in way that the directories consume a width proportial to the number of contained files. And so on, this is done for the next levels.
   [/Step]
 
   [Step]
     ### Node Types
     
-   ...
+   Again, we can use colors to discern the different types of files.
+  [/Step]
+
+  [Step]
+    ### Node Sizes
+    
+    And finally, the nodes can be scaled according to the respective file sizes. As a consequence, the widths of directory nodes also adapt and match the summed sizes of the contained files.
   [/Step]
 
 [/Scroller]
+
+You might have noticed that placing the labels is sometimes tricky in an icicle plot. For bigger nodes, there is usually enough space to print the full label. But for smaller ones, they need to be cut or cannot be printed at all. However, depending on the application, this might not be a bigger issues if size corresponds to importance. For instance, investigating which files consume most space on our hard disk, we would not be intrested in the files and their names anyways.
+
+### Comparison to Treempas
+
+## Scaling it up to Larger Hierarchies
+
+## Application Example: Performance Profiling
+
+## Conclusion
 
 ## About
 
