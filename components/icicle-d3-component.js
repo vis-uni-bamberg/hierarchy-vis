@@ -2,24 +2,27 @@ import React from 'react';
 import D3Component from 'idyll-d3-component';
 import * as d3 from 'd3';
 
-const size = 600
+const maxSize = 600
 
-let element, root
+let element, root, width
 
 class IcicleD3Component extends D3Component {
   initialize(node, props) {
+
+    width = Math.min(maxSize, window.innerWidth)
+
+    const svg = (this.svg = d3.select(node).append('svg'));
+    svg
+      .attr("viewBox", `0 0 ${width} ${maxSize}`)
+      .attr("class", "icicle-plot")
+
     root = d3.hierarchy(props.data);
 
     root.count()
 
     d3.partition()
-      .size([600, 600])
+      .size([width, maxSize])
       (root);
-
-    const svg = (this.svg = d3.select(node).append('svg'));
-    svg
-      .attr("viewBox", `0 0 ${size} ${size}`)
-      .attr("class", "icicle-plot")
 
     element = svg.selectAll("g")
       .data(root.descendants())
@@ -38,6 +41,7 @@ class IcicleD3Component extends D3Component {
   }
 
   update(props, oldProps) {
+
     if (props.index > 1) {
       root.eachAfter(
         d => d.value = d.children ? d.children.reduce(
@@ -50,7 +54,7 @@ class IcicleD3Component extends D3Component {
     }
 
     d3.partition()
-      .size([600, 600])
+      .size([width, maxSize])
       (root);
 
     element

@@ -84,7 +84,7 @@ In contrast to indented charts, an icicle plot focuses more on providing a good 
 
 [var name:"scrollerIndex2" value:0 /]
 [Scroller currentStep:scrollerIndex2]
-  [Graphic style:`{width: 600, margin: 'auto'}`]
+  [Graphic style:`{maxWidth: 600, margin: "auto", padding: 10}`]
       [IcicleD3Component data:hierarchy config:vis-config index:scrollerIndex2/]
   [/Graphic]
 
