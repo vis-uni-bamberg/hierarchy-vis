@@ -3,6 +3,9 @@
 [data name:"hierarchy" source:"hierarchy.json" /]
 [data name:"vis-config" source:"vis-config.json" /]
 
+[Fixed]
+  [^](#top)
+[/Fixed]
 
 [Header
   fullWidth:true
@@ -14,11 +17,27 @@
   color:"#ffffff"
    /]
 
+[div className:"toc"]
+  [Aside]
+    #### Contents
+
+    [ul]
+      [li][Introduction](#introduction)[/li]
+      [li][Indented Charts](#indented-charts)[/li]
+      [li][Icicle Plots](#icicle-plots)[/li]
+      [li][Discussion](#discussion)[/li]
+      [li][Application Example](#application-example)[/li]
+      [li][Conclusion](#conclusion)[/li]
+      [li][About](#about)[/li]
+    [/ul]
+  [/Aside]
+[/div]
+
 ## Introduction
 
 When it comes to visualizing hierarchically organized data, you often see [Annotation][Graphic]Nodes drawn as circles in layers and being connected by links[/Graphic]*node-link diagrams*[/Annotation] and [Annotation][Graphic]Recursively subdivided boxes[/Graphic]*treemaps*[/Annotation] promoted as the main types of diagrams. They are definitly interesting options, but two other techniques—sometimes forgotton—might be the true work horses of hierarchy visualization: 
 
-[p className:'centered'] **Indented Charts** and **Icicle Plots** [/p]
+[p className:"centered"] **Indented Charts** and **Icicle Plots** [/p]
 
 ## Indented Charts
 
@@ -112,9 +131,11 @@ You might have noticed that placing the labels is sometimes tricky in an icicle 
 
 ### Comparison to Treempas
 
-## Scaling it up to Larger Hierarchies
+## Discussion
 
-## Application Example: Performance Profiling
+### Scaling it up to Larger Hierarchies
+
+## Application Example
 
 ## Conclusion
 
