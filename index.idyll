@@ -27,6 +27,7 @@
       [li][Discussion](#discussion)[/li]
       [li][Application Example](#application-example)[/li]
       [li][Conclusion](#conclusion)[/li]
+      [li][Recommended Materials](#recommended-materials)[/li]
       [li][About](#about)[/li]
     [/ul]
   [/Aside]
@@ -132,11 +133,20 @@ You might have noticed that placing the labels is sometimes tricky in an icicle 
 
 ## Discussion
 
-### Scaling it up to Larger Hierarchies
+### Scaling it up to 
+
+### Empirical Results
+
+### Extended Versions
 
 ## Application Example
 
 ## Conclusion
+
+## Recommended Materials
+
+* [Treevis.net: A Visual Bibliography of Tree Visualization](https://treevis.net)
+* [d3-hiearchy: 2D layout algorithms for visualizing hierarchical data (D3js)](https://github.com/d3/d3-hierarchy)
 
 ## About
 
