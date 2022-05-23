@@ -36,7 +36,7 @@ p {
 
 .centered {
   text-align: center;
-  background-color: var(--highlighting);;
+  border: 2px solid var(--highlighting);;
   padding: 1rem;
 }
 
@@ -53,6 +53,26 @@ p {
   left: -350px;
   text-align: left;
   font-style: normal;
+}
+
+.icon {
+  height: 30px;
+  position: relative;
+  bottom: -5px;
+}
+
+.icon-large {
+  height: 80px;
+  padding: 1rem;
+}
+
+.left {
+  float: left;
+}
+
+.v-space {
+  display: inline-block;
+  width: 20px;
 }
 
 .d3-component svg {

@@ -37,15 +37,19 @@
 
 When it comes to visualizing hierarchically organized data, you often see [Annotation][Graphic]Nodes drawn as circles in layers and being connected by links[/Graphic]*node-link diagrams*[/Annotation] and [Annotation][Graphic]Recursively subdivided boxes[/Graphic]*treemaps*[/Annotation] promoted as the main types of diagrams. They are definitly interesting options, but two other techniques—sometimes forgotton—might be the true work horses of hierarchy visualization: 
 
-[p className:"centered"] **Indented Charts** and **Icicle Plots** [/p]
+[p className:"centered"] **Indented Charts** [Inline][img src:"static/images/indented-icon.svg" className:"icon"/][/Inline] [span className:"v-space" /] and [span className:"v-space" /] **Icicle Plots** [/p]
 
-## Indented Charts
+## Indented Charts 
 
 [Aside]
   Not even a visualization?
 [/Aside]
 
-So simple and known from file browsers and other user interfaces, indented charts might not even be considered a visualization, but just a user interface component like a list. Their characteristic feature is that the elements of the hierarchy are vertically listed below each other with **increasing horizontal intentation per level**. Child elements directly follow their parents.
+[p className:"left"]
+  [img src:"static/images/indented-icon.svg" className:"icon-large"/]
+[/p]
+
+So simple and known from file browsers and other user interfaces, indented charts might not even be considered a visualization, but just a user interface component like a list. Their characteristic feature is that the **elements of the hierarchy are vertically listed** below each other with **increasing horizontal intentation per level**. Child elements directly follow their parents.
 
 [var name:"scrollerIndex" value:0 /]
 [Scroller currentStep:scrollerIndex]
