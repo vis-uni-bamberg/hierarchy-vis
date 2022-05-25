@@ -150,7 +150,7 @@ In contrast to indented charts, an icicle plot focuses more on providing a good 
   [Step]
     ### Node Types
     
-   Again, we can use colors to discern the different types of files.
+   We already encode the levels of the hierarchy as slightly decreasing opacity, but again, we can also use colors to discern the different types of files.
   [/Step]
 
   [Step]

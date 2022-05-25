@@ -53,6 +53,7 @@ class SunburstD3Component extends D3Component {
     element.append("path")
       .attr("d", arc)
       .style("fill", d => props.config.fileTypeColors[d.data.name.split(".")[1]])
+      .attr("opacity", d => 0.5 - d.depth * 0.08)
 
     element.append("text")
       .filter(d => (d.y0 + d.y1) / 2 * (d.x1 - d.x0) > 10)

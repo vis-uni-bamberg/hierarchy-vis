@@ -24,6 +24,8 @@ class IcicleD3Component extends D3Component {
       .size([width, maxSize])
       (root);
 
+    console.log(root)
+
     element = svg.selectAll("g")
       .data(root.descendants())
       .enter()
@@ -33,6 +35,7 @@ class IcicleD3Component extends D3Component {
     element.append("rect")
       .attr("width", d => d.x1 - d.x0)
       .attr("height", d => d.y1 - d.y0)
+      .attr("opacity", d => 0.5 - d.depth * 0.08)
 
     element.append("text")
       .attr("x", 5)
