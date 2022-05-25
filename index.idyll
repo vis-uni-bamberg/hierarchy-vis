@@ -21,10 +21,9 @@
     #### Contents
 
     [ul]
-      [li][Introduction](#introduction)[/li]
       [li][Indented Charts](#indented-charts)[/li]
       [li][Icicle Plots](#icicle-plots)[/li]
-      [li][Discussion](#discussion)[/li]
+      [li][Research Findings](#research-findings)[/li]
       [li][Application Example](#application-example)[/li]
       [li][Conclusion](#conclusion)[/li]
       [li][Recommended Materials](#recommended-materials)[/li]
@@ -32,8 +31,6 @@
     [/ul]
   [/Aside]
 [/div]
-
-## Introduction
 
 [Aside]
   An interactive article discussing two sometimes forgotten, but quite effective hierarchy visualization techniques.
@@ -129,9 +126,9 @@ Generally, an indented chart can be considered a variant of node-link diagram, i
   Size matters!
 [/Aside]
 
-[p className:"left"]
+[div className:"left"]
   [img src:"static/images/icicle-icon.svg" className:"icon-large"/]
-[/p]
+[/div]
 
 In contrast to indented charts, an icicle plot focuses more on providing a good overview of the sizes of the hierarchy nodes. In this regard, it is similar to a treemap where the size of the nodes is encoded in the rectangular area they fill. But instead of nesting the nodes, the icicle plots just **start with a full-width rectangle and attach the child nodes below their parent as a rectangle scaled according to their sizes**. 
 
@@ -195,7 +192,9 @@ For file sizes, the division of rectangle in the plot works nicely is intuitive 
 
 The radial variant of an icicle plot, often called *sunburst chart*, has slightly different properties. Here, the root is a circle in the center and all child nodes are ring segments at the respective level. The below diagram shows the above file system example drawn as a sunburst chart with radially placed labels.
 
-[SunburstD3Component data:hierarchy config:vis-config index:scrollerIndex2/]
+[Graphic]
+  [SunburstD3Component data:hierarchy config:vis-config index:scrollerIndex2/]
+[/Graphic]
 
 [Aside]
   ... but is it better?

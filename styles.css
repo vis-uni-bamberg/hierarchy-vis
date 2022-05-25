@@ -36,7 +36,8 @@ p {
 
 .centered {
   text-align: center;
-  border: 2px solid var(--highlighting);;
+  border-top: 2px solid var(--highlighting);;
+  border-bottom: 2px solid var(--highlighting);;
   padding: 1rem;
 }
 
@@ -64,12 +65,14 @@ p {
 
 .icon-large {
   height: 80px;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .left {
   float: left;
+  padding-right: 1rem;
 }
+
 
 .v-space {
   display: inline-block;
@@ -89,6 +92,10 @@ p {
 
 .idyll-scroll-text .idyll-step {
   padding: 0rem 2rem;
+}
+
+.idyll-graphic {
+  margin: 2rem 0.25rem;
 }
 
 .indented-plot line {
