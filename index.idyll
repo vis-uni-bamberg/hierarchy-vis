@@ -167,6 +167,8 @@ You might have noticed that placing the labels is sometimes tricky in an icicle 
 
 The radial variant, often called *sunburst chart*, has slightly different properties. Here, the root is a circle in the center and all child nodes are ring segments at the respective level. The nodes are  subdevided not by width but by angle. This results in nodes towards the center being disproportionally smaller. However, interpreting each ring at a level as 100%, the relative sizes are interpretable, somewhat like in a [pie chart](https://en.wikipedia.org/wiki/Pie_chart) where the full pie usually represents 100% of quantity. Labeling, like usual in radial visualizations, becomes even more challenging. The below diagram shows the above file system example drawn as a sunburst chart with radially placed labels.
 
+[SunburstD3Component data:hierarchy config:vis-config index:scrollerIndex2/]
+
 ### Practical Use
 
 ### Comparison to Treempas

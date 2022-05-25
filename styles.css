@@ -101,3 +101,7 @@ p {
   stroke-width: 1px;
   opacity: 0.5;
 }
+
+.sunburst-plot path {
+  opacity: 0.5;
+}
