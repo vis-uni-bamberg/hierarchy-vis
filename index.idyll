@@ -110,14 +110,16 @@ The visualization is often used in file browsers, allowing users to interactivel
 
 Generally, an indented chart can be considered a variant of node-link diagram, in a simple layout where all nodes are placed below each other. You may have notices that the list-like layout makes it straightforward to print labels for each node, and there is sufficient space for longer labels. In contrast, most other node-link layouts, though being slightly more compact, run into certain problems for placing labels. Especially difficult to label are those that use a radial layout, also because rotated texts gets more difficult to read for increasing rotation angles.
 
-[p className:"centered"] 
-  [p className:"left"]
+[p className:"centered row"] 
+  [div className:"column25"]
     [img src:"static/images/indented-icon.svg" className:"icon-large"/]
-  [/p]
+  [/div]
   
-  ### Insight
+  [div className:"column75"]
+    ### Insight
 
-  **Indented charts** are simple to implement, known by every user, allow for interactive exploration of large hierarchies, and do not cause issues when printing labels. 
+    **Indented charts** are simple to implement, known by every user, allow for interactive exploration of large hierarchies, and do not cause issues when printing labels. 
+  [/div]
 [/p]
 
 ## Icicle Plots
@@ -187,7 +189,7 @@ For file sizes, the division of rectangle in the plot works nicely is intuitive 
 ### Sunburst Charts
 
 [Aside]
-  Admittedly, the radial **sunburst** variant looks nice ...
+  Admittedly, the radial sunburst variant looks nice ...
 [/Aside]
 
 The radial variant of an icicle plot, often called *sunburst chart*, has slightly different properties. Here, the root is a circle in the center and all child nodes are ring segments at the respective level. The below diagram shows the above file system example drawn as a sunburst chart with radially placed labels.
@@ -206,14 +208,16 @@ The nodes are subdivided not by width but by angle. This results in nodes toward
 
 ... like a treemap, icicle plots are sometimes characterized as *space-filling*—they can fill any rectangular space. While this is perfectly true for treemaps, an icicle plot would leave still some whitespace (if not all leaf nodes are on the same hierarchy level).
 
-[p className:"centered"] 
-  [p className:"left"]
+[p className:"centered row"] 
+  [div className:"column25"]
     [img src:"static/images/icicle-icon.svg" className:"icon-large"/]
-  [/p]
+  [/div]
   
-  ### Insight
+  [div className:"column75"]
+    ### Insight
 
-  **Icicle plots** (and **sunburst charts**) are great to clearly visualize a linear size attribute of the nodes; maybe not known to every user already, they are not difficult to understand either.
+    **Icicle plots** (and **sunburst charts**) are great to clearly visualize a linear size attribute of the nodes; maybe not known to every user already, they are not difficult to understand either.
+  [/div]
 [/p]
 
 ## Research Findings
