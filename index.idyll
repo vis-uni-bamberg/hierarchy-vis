@@ -186,6 +186,22 @@ For file sizes, the division of rectangle in the plot works nicely is intuitive 
 
 ...
 
+[var name:"icicleZoom" value:100 /]
+[var name:"icicleScroll" value:0 /]
+
+[div className:"row"]
+  [div]
+    [p]*Zoom*[/p]
+    [Range value:icicleZoom min:100 max:10000 /]
+  [/div]
+  [div]
+    [p]*Scroll*[/p]
+    [Range value:icicleScroll min:0 max:1000 /]
+  [/div]
+[/div]
+
+[IcicleLargeD3Component data:hierarchy config:vis-config zoom:icicleZoom scroll:icicleScroll/]
+
 ### Sunburst Charts
 
 [Aside]

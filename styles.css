@@ -135,3 +135,8 @@ a {
   stroke: white;
   stroke-width: 1px;
 }
+
+.icicle-plot rect.gradient {
+  stroke-width: 0;
+  fill: url(#gradient);
+}
