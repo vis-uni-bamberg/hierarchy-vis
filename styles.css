@@ -97,11 +97,6 @@ a {
   flex: 75%;
 }
 
-.left {
-  float: left;
-  margin-right: 1rem;
-}
-
 .v-space {
   display: inline-block;
   width: 20px;
