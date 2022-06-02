@@ -12,7 +12,7 @@
   title:"Effective Visualization of Hierarchies"
   subtitle:"Using Indented Charts and Icicle Plots"
   author:"Fabian Beck"
-  date: "May 2022"
+  date: "June 2022 (v1.0-alpha)"
   authorLink:"https://github.com/fabian-beck"
    /]
 
@@ -24,7 +24,7 @@
       [li][Indented Charts](#indented-charts)[/li]
       [li][Icicle Plots](#icicle-plots)[/li]
       [li][Conclusion](#conclusion)[/li]
-      [li][About](#about)[/li]
+      [li][Appendix: About, References](#about)[/li]
     [/ul]
   [/Aside]
 [/div]
@@ -33,21 +33,21 @@
   An interactive article discussing two sometimes forgotten, but quite effective hierarchy visualization techniques.
 [/Aside]
 
-When it comes to visualizing hierarchically organized data, you often see [Annotation][Graphic]Nodes drawn as circles in layers and being connected by links[/Graphic]*node-link diagrams*[/Annotation] and [Annotation][Graphic]Recursively subdivided boxes[/Graphic]*treemaps*[/Annotation] promoted as the main types of diagrams. They are definitely interesting options, but two other techniques—sometimes forgotten—might be **the true workhorses of hierarchy visualization**: 
+When it comes to visualizing hierarchically organized data, you often see [Annotation][Graphic]Nodes drawn as circles in layers and being connected by links[/Graphic]*node-link diagrams*[/Annotation] and [Annotation][Graphic]Rectangles nested according to the hierarchical structure[/Graphic]*treemaps*[/Annotation] promoted as the main types of diagrams. They are definitely interesting options, but two other techniques—sometimes forgotten—might be **the true workhorses of hierarchy visualization**: 
 
 [p className:"centered"] **Indented Charts** [Inline][img src:"static/images/indented-icon.svg" className:"icon"/][/Inline] [span className:"v-space" /] and [span className:"v-space" /] **Icicle Plots** [Inline][img src:"static/images/icicle-icon.svg" className:"icon"/][/Inline][/p]
 
-This interactive article presents these two types of visualization and discusses their characteristics. Trying to answer what makes such a visualization effective in practical application, we reflect on options for label placement, interactivity, and scaling the approacher to larger datasets. 
+This interactive article presents these two types of visualization and discusses their characteristics. Trying to answer what makes such a visualization effective in practical application, we will reflect on options for label placement, interactivity, and scaling the approaches to larger datasets. 
 
 # Indented Charts 
 
 [Aside]
-  Not even a visualization?
+  So simple!
 [/Aside]
 
 [img src:"static/images/indented-icon.svg" className:"icon-large"/]
 
-Known from file browsers and other tools, indented charts are so simple that they might not even be considered a visualization, but just a user interface component 
+Known from file browsers and other tools, indented charts are so simple that they might not even be considered a visualization, but just a user interface component.
 
 **Elements of the hierarchy are vertically listed** below each other, with **increasing horizontal indentation per level**. Child elements directly follow their parents.
 
@@ -84,7 +84,7 @@ Let us visualize a simple hierarchy that shows a directory of files as an indent
   [/Step]
 
   [Step]
-    ### Node Size
+    ### Node Sizes
     
     And, very useful for files, the area of the circles may encode the sizes of the respective files and directories.
   [/Step]
@@ -92,16 +92,20 @@ Let us visualize a simple hierarchy that shows a directory of files as an indent
 [/Scroller]
 
 [Aside]
-  A no-name visualization
+  One visualization, many names
 [/Aside]
 
 If you try to find more information on this representation, unfortunately, you will quickly learn that it does not have one name consistently used in all sources, but different ones. I decided here to go for *indented chart* as it appears to be one of the most frequently used ones and is quite descriptive—other common names are *indented plot*, *indented layout*, *indented tree*, and *tree view*.
 
 ## Practical Use
 
-The visualization is often used as an interactive component, allowing users to **expand and collapse inner nodes** of the hierarchy. Being collapsed at the beginning, for instance in file browsers, even huge hierarchies can be interactively explored. Only rarely, additional numeric attributes are shown in such interfaces, but [TreeSize](https://www.jam-software.de/treesize_free) is an example that, similar to our example above, visualizes file sizes within the indented hierarchy. 
+[Aside]
+  Just click to expand
+[/Aside]
 
-Furthermore, [indentation of program code](https://en.wikipedia.org/wiki/Indentation_style) can be considered a variant of this. Many code editors visually indicate the levels by lines and allow for collapsing parts of the hierarchical program structure.
+The visualization is often used as an interactive component, allowing users to **expand and collapse inner nodes** of the hierarchy. Being collapsed at the beginning, for instance, in file browsers, even huge hierarchies can be interactively explored. Only rarely, additional numeric attributes are shown in such interfaces, but they exist across various domains. For instance, [TreeSize](https://www.jam-software.de/treesize_free) is a tool that, similar to our example above, visualizes file sizes within the indented hierarchy. 
+
+Furthermore, [indentation of program code](https://en.wikipedia.org/wiki/Indentation_style) can be considered a variant of this. Many code editors visually indicate the levels by vertical lines and allow for collapsing parts of the hierarchical program structure.
 
 ## Comparison to Node-Link Diagrams
 
@@ -109,9 +113,25 @@ Furthermore, [indentation of program code](https://en.wikipedia.org/wiki/Indenta
   Yet another node-link layout?
 [/Aside]
 
-Generally, an indented chart can be considered **a variant of node-link diagram**, in a simple layout where all nodes are placed below each other. The layout algorithm is trivial to implement. In contrast to other node-link layouts, it consumes more vertical space and but little horizontal space. This might be perceived as a disadvantage, but also allows to just add vertical scrolling when the diagram outgrows the available screen space.
+Generally, an indented chart can be considered **a variant of a node-link diagram**, in a simple layout where all nodes are placed below each other. The layout algorithm is trivial to implement. In contrast to other node-link layouts, it consumes more vertical but little horizontal space. This might be perceived as a disadvantage, but also allows to just add vertical scrolling when the diagram outgrows the available screen space.
 
 You may have noticed that the list-like layout makes it **straightforward to print labels** for each node, and there is sufficient space for longer labels. In contrast, most other node-link layouts, though being slightly more compact, run into certain problems for placing labels. Especially difficult to label are those that use a radial layout, also because rotated texts get more difficult to read.
+
+There are not many user studies comparing the two representations. However, the few studies that investigate variants of the two suggest a similar performance [Cite 
+  authors:"Burch, Michael and Raschke, Michael and Weiskopf, Daniel"
+  title:"Indented Pixel Tree Plots"
+  url:"https://doi.org/10.1007/978-3-642-17289-2_33" 
+  id:"burch2010indented"
+  venue:"International Symposium on Visual Computing"
+  date:"2010"
+/][Cite 
+  authors:"Fu, Bo and Noy, Natalya F and Storey, Margaret-Anne"
+  title:"Indented tree or graph? A usability study of ontology visualization techniques in the context of class mapping evaluation"
+  url:"https://doi.org/10.1007/978-3-642-41335-3_8" 
+  id:"fu2013indented"
+  venue:"International Semantic Web Conference"
+  date:"2013"
+/]. So, if readability can be assumed as comparable, it will be more about practical issues like those discussed above when selecting between the two approaches.
 
 [p className:"centered row"] 
   [div className:"column25"]
@@ -133,7 +153,7 @@ You may have noticed that the list-like layout makes it **straightforward to pri
 
 [img src:"static/images/icicle-icon.svg" className:"icon-large"/]
 
-In contrast to indented charts, an icicle plot focuses more on providing a good overview of the sizes of the hierarchy nodes. In this regard, it is similar to a treemap where the size of the nodes is encoded in the rectangular area they fill. But instead of nesting the nodes, the icicle plots just **start with a full-width rectangle and attach the child nodes below their parent as rectangles**, scaled according to their sizes. 
+In contrast to indented charts, an icicle plot focuses more on providing a good overview of the sizes of the hierarchy nodes. In this regard, it is similar to a treemap where the size of the nodes is encoded in the rectangular area they fill. But instead of nesting the nodes, the icicle plots work in layers. They **start with a full-width rectangle and attach the child nodes below their parent as rectangles**, scaled according to their sizes. 
 
 We can use the small file structure again as an example and see how it looks as an icicle plot. Yet, let us first assume that all files in our example have the same size.
 
@@ -146,7 +166,7 @@ We can use the small file structure again as an example and see how it looks as 
   [Step]
     ### Base Layout
     
-     In the resulting base layout, the root node is placed at the top at full width. The level below is subdivided into the respective directories and files in a way that the directories consume a width proportional to the number of contained files. And so on, this is done for the next levels.
+     In the resulting base layout, the root node is placed at the top layer at full width. The layer below is subdivided into the respective directories and files in a way that the directories consume a width proportional to the number of contained files, and so on.
   [/Step]
 
   [Step]
@@ -167,7 +187,21 @@ We can use the small file structure again as an example and see how it looks as 
   Icicles and flames
 [/Aside]
 
-From a distance, these vertically appended rectangles **somewhat resemble hanging icicles**. If arrange from bottom to top instead (and colored in red-orange colors), they more look like flames and are sometimes called *flame graphs*, respectively. But, of course, we could also choose a layout from left to right or right to left—these do not have specific names.
+From a distance, these vertically appended rectangles **somewhat resemble hanging icicles**; the term goes back to a paper from the early 1980s [Cite 
+  authors:"Kruskal, J. B. and Landwehr, J. M."
+  title:"Icicle Plots: Better displays for hierarchical clustering"
+  url:"https://doi.org/10.2307/2685881" 
+  id:"kruskal1983icicle"
+  venue:"The American Statistician"
+  date:"1983"
+/]. If arrange from bottom to top instead (and colored in red-orange colors), they more look like flames and are sometimes called *flame graphs* [Cite 
+  authors:"Gregg, Brendan"
+  title:"The Flame Graph"
+  url:"http://dx.doi.org/10.1145/2909476" 
+  id:"gregg2016flame"
+  venue:"Communications of the ACM"
+  date:"2016"
+/]. But, of course, we could also choose a layout from left to right or right to left—these do not have specific names.
 
 ## Practical Use
 
@@ -177,7 +211,7 @@ From a distance, these vertically appended rectangles **somewhat resemble hangin
 
 You might have noticed that **placing labels is sometimes tricky in an icicle plot**. For bigger nodes, there is usually enough space to print the full label. But for smaller ones, they need to be cut or cannot be printed at all. However, depending on the application, this might not be an issue if size corresponds to importance. For instance, investigating which files consume most space on our hard disk, we would not be interested in the small files and their names anyway.
 
-Still, finding the best possible labeling result is desireable. Rotating individual labels by 90 degree might, in some cases, allow to print longer labels at the costs of a poorer readability of the vertical labels. Alternatively, rotating the whole plot with nodes arranged from left to right is an option to ease labeling. However, which layout works best can only be decided depending on the available screen space, the lengths of the labels, and the strucuture of the hierarchy.
+Still, finding the best possible labeling result is desirable. Rotating individual labels by 90 degree might, in some cases, allows printing longer labels at the costs of a poorer readability of the vertical labels. Alternatively, rotating the whole plot with nodes arranged from left to right is an option to ease labeling. However, which layout works best can only be decided depending on the available screen space, the lengths of the labels, and the size and structure of the hierarchy.
 
 [Aside]
   Size + size = size
@@ -189,7 +223,7 @@ For file sizes, the division of rectangles in the plot works nicely and is intui
   Zooming in
 [/Aside]
 
-While simple expand and collapse operations can make an indented plot scale to large hierarchies, this strategy is of limited use for an icicle plot. Collapsing a node would not reduce the size of its parent, and hence, would not free any screen space. Instead, we can use a **zooming approach**. Unlike a traditional pan and zoom in two dimenstions—like used for maps and images—, the zoom can be **restricted to one dimension only** because, in most cases, only the breadth and not the depth of the hierarchy limits the readability of an icicle plot. 
+While simple expand and collapse operations can make an indented plot scale to large hierarchies, this strategy is of limited use for an icicle plot. Collapsing a node would not reduce the size of its parent, and hence, would not free any screen space. Instead, we can use a **zooming approach**. Unlike a traditional pan-and-zoom in two dimensions—like used for maps and images—, the zoom can be **restricted to one dimension only** because, in most cases, only the breadth and not the depth of the hierarchy limits the readability of an icicle plot. 
 
 Below is an example of a larger hierarchy (the file example above copied 50 times with varying file sizes) with vertical zooming and scrolling, implemented through two sliders.
 
@@ -197,11 +231,11 @@ Below is an example of a larger hierarchy (the file example above copied 50 time
 [var name:"icicleScroll" value:0 /]
 
 [div className:"row"]
-  [div]
+  [div className:"column50"]
     [p]*Zoom*[/p]
     [Range value:icicleZoom min:100 max:10000 /]
   [/div]
-  [div]
+  [div className:"column50"]
     [p]*Scroll*[/p]
     [Range value:icicleScroll min:0 max:1000 /]
   [/div]
@@ -209,15 +243,22 @@ Below is an example of a larger hierarchy (the file example above copied 50 time
 
 [IcicleLargeD3Component data:hierarchy config:vis-config zoom:icicleZoom scroll:icicleScroll/]
 
-The example shows that, in the zoomed-out version, the overall structure of the hierarchy is still readable. You can see which are the bigger branches and nodes of the hierarchy and how the differently colored filetypes spread in the hierarchy levels. Zooming in reveals the individual directory and file names as well as allows exploring the smaller nodes. 
+The example shows that, in the zoomed-out version, the structure of the hierarchy is still readable. You can see which are the bigger branches and nodes of the hierarchy and how the differently colored file types spread in the hierarchy levels. Zooming in reveals the individual directory and file names, as well as allows exploring the smaller nodes. 
 
-Please note the extra shading of the background of the nodes—a white gradient at the left side of each rectangle—, which helps discern the rectangles vertically on higher zoom levels. Boderlines around the retangles, in contrast, would have cluttered the diagram.
+Please note the extra shading of the background of the nodes—a white gradient on the left side of each rectangle, creating a kind of *cushion effect* [Cite 
+  authors:"Chevalier, Fanny and Auber, David and Telea, Alexandru"
+  title:"Structural analysis and visualization of C++ code evolution using syntax trees"
+  url:"https://doi.org/10.1111/j.1467-8659.2011.01898.x" 
+  id:"chevalier2007structural"
+  venue:"Ninth International Workshop on Principles of Software Evolution"
+  date:"2007"
+/]. This helps discern the rectangles vertically on higher zoom levels. Borderlines around the rectangles, in contrast, would have cluttered the diagram. 
 
 [Aside]
   Timelines of nested calls
 [/Aside]
 
-If you want to see the the approach in action, I recommend using **performance profiling tools** (e.g., open as available in the developer tools of your fovourite web browser). Most of these tools **use timelines of nested calls as icicle plots**. Here, the nodes represent the call of a method, hierarchically stacked according to a call tree. The sizes of the nodes corresponds to their execution times. So, when arranging the nodes on the timeline in the correct hierarchy level, a temporal icicle plot is created.
+If you want to see the approach in action, I recommend using **performance profiling tools** (e.g., open as available in the developer tools of your fovorite web browser). Most of these tools **use timelines of nested calls as icicle plots**. Here, the nodes represent the call of a method, hierarchically stacked according to a call tree. The sizes of the nodes corresponds to their execution times. So, when arranging the nodes on the timeline in the correct hierarchy level, a temporal icicle plot is created.
 
 ## Sunburst Charts
 
@@ -225,7 +266,7 @@ If you want to see the the approach in action, I recommend using **performance p
   Admittedly, the radial sunburst variant looks nice ...
 [/Aside]
 
-The **radial variant of an icicle plot**, often called *sunburst chart*, might be even somewhat more commonly presented and used. It has slightly different properties. Here, the root is a circle in the center and all child nodes are ring segments at the respective level. 
+The **radial variant of an icicle plot**, often called *sunburst chart*, might be even somewhat more commonly presented and used. It has slightly different properties. Here, the root is a circle in the center and all child nodes are ring segments at the respective radial layer. 
 
 The below diagram shows the above file system example drawn as a sunburst chart with radially placed labels.
 
@@ -237,27 +278,35 @@ The below diagram shows the above file system example drawn as a sunburst chart 
   ... but is it better?
 [/Aside]
 
-The nodes are subdivided not by width but by angle. This results in nodes being disproportionately smaller towards the center. However, interpreting each ring at a level as 100% of a quantity, the relative sizes are interpretable, somewhat like in a [pie chart](https://en.wikipedia.org/wiki/Pie_chart) where the full pie usually also represents 100%. Hence, node sizes are comparable within a level, but not across levels—and angles might be harder to compare. Labeling, like usual in radial visualizations, becomes more challenging and one-dimensional zooming cannot be implemented as described above; however, more space is available for the outer nodes at deeper levels of the hierarchy. Overall, I would still recommend the standard icicle plot as a default, but also besides the aesthetics, there are reasons why in some cases a sunburst chart might be preferable.
+The nodes are subdivided not by width but by angle. This results in nodes being disproportionately smaller towards the center. However, interpreting each ring at a layer as 100% of a quantity, the relative sizes are interpretable, somewhat like in a [pie chart](https://en.wikipedia.org/wiki/Pie_chart) where the full pie usually also represents 100%. Hence, node sizes are comparable within a layer, but not across layers—and angles might be harder to compare. 
 
-## Comparison to Treempas
+Labeling, like usual in radial visualizations, becomes more challenging and one-dimensional zooming cannot be implemented as described above; however, more space is available for the outer nodes at deeper levels of the hierarchy. 
 
-**Treemaps and icicle plots both focus on showing size attributes of a nodes**. Like a treemap, icicle plots are sometimes characterized as *space-filling* [Cite 
+Overall, I would still recommend the standard icicle plot as a default, but also besides the aesthetics, there are reasons why in some cases a sunburst chart might be preferable.
+
+## Comparison to Treemaps
+
+[Aside]
+  Whitespace to reveal structure
+[/Aside]
+
+**Treemaps and icicle plots both focus on showing size attributes of the nodes**. Also, treemaps rely on the assumption that sizes add up linearly for inner nodes as discussed above for icicle plots. Both representations are sometimes characterized as *space-filling* [Cite 
   authors:"Von Landesberger, Tatiana and Kuijper, Arjan and Schreck, Tobias and Kohlhammer, Jörn and van Wijk, Jarke J and Fekete, Jean-Daniel and Fellner, Dieter W"
   title:"Visual analysis of large graphs: State-of-the-art and future research challenges"
   url:"https://doi.org/10.1111/j.1467-8659.2011.01898.x" 
   id:"vonLandesberger2011Visual"
   venue:"Computer Graphics Forum"
   date:"2011"
-/]—they can fill any rectangular space. However, I find this characterization misleading. While this is perfectly true for treemaps, an icicle plot would leave still some whitespace (if not all leaf nodes are on the same hierarchy level). Also, it is not desirable to use a rectangular of any aspect ratio for an icicle plot, but to consider fits it ... In this regard the treemap is more flexible. 
+/]—they can fill any rectangular space. However, I find this characterization misleading for icicle plots. While this is perfectly true for treemaps, an icicle plot would usually still has some whitespace. Also, it is not desirable to use a rectangle of any aspect ratio for an icicle plot, but rather to select a specific viewport that matches the data at hand and the orientation of the plot. In this regard, a treemap is more flexible. 
 
-However, in my eyes treemaps are often overrated as they come with clear downsides: First, they partly obfuscate the hierarchical structure—within the recursively nested boxes it is challenging to perceive the inner nodes, that are the structure-forming elements of the hierarchy. One can try to counterbalance, for instance, by using shading to better highlight the overall structure [Cite 
+However, in my eyes, treemaps are often overrated. They come with clear disadvantages: First, they partly obfuscate the hierarchical structure—within the recursively nested boxes, it is challenging to perceive the inner nodes, which are the structure-forming elements of the hierarchy. One can try to counterbalance, for instance, by using cushion shading to better highlight the structure [Cite 
   authors:"Van Wijk, Jarke J and Van de Wetering, Huub"
   title:"Cushion Treemaps: Visualization of hierarchical information"
   url:"https://doi.org/10.1109/INFVIS.1999.801860" 
   id:"vanWijk1999Cushion"
   venue:"Proceedings 1999 IEEE Symposium on Information Visualization"
   date:"1999"
-/], but the general problem remains. Second, interactive exploration is much harder to implement and ... Like in icicle plots, simple collapsing and expanding of nodes would ... sizes. Using two-dimensional pan and zoom is possible, but would ignore the hierarchical structure and obfuscate it even more. Empirical studies provide evidence for lower performance and user preference of treemaps compared to icicle plots [Cite 
+/], but the general problem remains. Second, interactive exploration is much harder to implement and not as easy to use in treemaps. Like in icicle plots, simple collapsing and expanding of nodes would conflict with the correct sizing of the rectangles. Using two-dimensional pan-and-zoom is possible, but would ignore the hierarchical structure and obfuscate it even more. Empirical studies also provide some evidence of lower performance and user preference of treemaps compared to icicle plots [Cite 
   authors:"Barlow, Todd and Neville, Padraic"
   title:"A comparison of 2-D visualizations of hierarchies"
   url:"https://doi.ieeecomputersociety.org/10.1109/INFVIS.2001.963290" 
@@ -273,6 +322,15 @@ However, in my eyes treemaps are often overrated as they come with clear downsid
   date:"2019"
 /]. 
 
+Many variants exist of the two approaches that, in contrast to the *explicit* links in node-link diagrams, visualize the hierarchical structure *implicitly* [Cite 
+  authors:"Schulz, Hans-Jorg and Hadlak, Steffen and Schumann, Heidrun"
+  title:"The design space of implicit hierarchy visualization: A survey"
+  url:"https://doi.org/10.1109/TVCG.2010.79" 
+  id:"schulz2010design"
+  venue:"IEEE Transactions on Visualization and Computer Graphics"
+  date:"2010"
+/].
+
 [p className:"centered row"] 
   [div className:"column25"]
     [img src:"static/images/icicle-icon.svg" className:"icon-large"/]
@@ -281,15 +339,17 @@ However, in my eyes treemaps are often overrated as they come with clear downsid
   [div className:"column75"]
     ## Insight
 
-    **Icicle plots** are great to clearly visualize a linear size attribute of the nodes. Maybe not known to every user already, they are not difficult to understand either. Combined with vertical zooming, they scale well to visualizing large hierarchies.
+    **Icicle plots** are great to clearly visualize a linear size attribute of the nodes. Maybe not known to every user already, they are not difficult to understand either. Combined with one-dimensional zooming, they scale well to visualizing large hierarchies.
   [/div]
 [/p]
 
 # Conclusion
 
-Intended charst and icicle plots are two hierarchy visualization approaches that can be considered as simpler but not less effective versions of node-link diagrams and treemaps. While the first ..., the second focuses on visualizing aggregated size attributes of the nodes. Especially when it comes to placing labels and scaling the visualizations to larger hierarchies, I see clear advantages over node-link diagrams and treemaps, as well as over the radial sunburst charts. Indented charts and iccle plots are both easy to implement and available in many visualization libraries. 
+**Intended charts and icicle plots** are two hierarchy visualization approaches that **can be considered as simpler but not less effective versions of node-link diagrams and treemaps**. While the first mainly shows the hierarchical structure, the second focuses on visualizing aggregated size attributes of the nodes. Especially when it comes to placing labels and scaling the visualizations to larger hierarchies, I see clear advantages over node-link diagrams and treemaps, as well as over the radial sunburst charts. Indented charts and icicle plots are both easy to implement and available in many visualization libraries. 
 
 ## Recommended Materials
+
+For following up on more specific hierarchy visualization approaches or with implementing an own solution, I recommend the following sources, besides the references below.
 
 * [Treevis.net: A Visual Bibliography of Tree Visualization](https://treevis.net)
 * [d3-hierarchy: 2D layout algorithms for visualizing hierarchical data (D3js)](https://github.com/d3/d3-hierarchy)
