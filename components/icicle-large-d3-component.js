@@ -38,8 +38,6 @@ class IcicleLargeD3Component extends D3Component {
       .size([width, maxHeight])
       (root);
 
-    console.log(root)
-
     svg.append("linearGradient")
       .attr("id", "gradient")
       .attr("gradientUnits", "userSpaceOnUse")

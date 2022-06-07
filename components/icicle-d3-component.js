@@ -24,8 +24,6 @@ class IcicleD3Component extends D3Component {
       .size([width, maxSize])
       (root);
 
-    console.log(root)
-
     element = svg.selectAll("g")
       .data(root.descendants())
       .enter()
