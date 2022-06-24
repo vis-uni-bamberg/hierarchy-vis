@@ -6,7 +6,7 @@ An interactive article discussing two sometimes forgotten, but quite effective h
 
 For reading the interactive article, please visit:
 
-https://github.com/fabian-beck/pure-suggest
+https://vis-uni-bamberg.github.io/hierarchy-vis/
 
 ## Execute the article locally as an idyll-post
 
