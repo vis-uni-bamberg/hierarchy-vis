@@ -6,7 +6,7 @@
   --secondary-dark: #1e105c;
   --highlighting: #FB9902;
   --highlighting-dark: #ce7b00;
-  --gray-light: #eeeeee;
+  --gray-light: #ddd;
   --gray: #999999;
   --shadow: 2px 2px 8px var(--gray-light);
 }
@@ -160,5 +160,75 @@ input {
   .aside {
     position: static;
     width: 100%;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 11mm 17mm 17mm 17mm;
+}
+
+
+
+@media print {
+  
+  .fixed {
+    display: none;
+  }
+
+  .article-header{
+    box-shadow: none;
+    background-color: none;
+    background-image: none;
+    color: black !important;
+  }
+
+  .idyll-text-container h1{
+    page-break-before: always;
+    padding-top: 10rem;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+
+  .idyll-scroll {
+    margin: 0;
+    page-break-before: always;
+    page-break-after: always;
+  }
+
+  .idyll-scroll-graphic {
+    position: relative;
+    width: inherit;
+    height: 75vh !important;
+    inset: inherit;
+    transform: none;
+  }
+
+  .idyll-scroll-graphic>div {
+    transform: none;
+    width: inherit;
+    height: inherit;
+    position: relative;
+  }
+
+  .idyll-graphic {
+    margin: 0 !important;
+  }
+
+  .idyll-scroll-text {
+    position: absolute;
+    top: 60vh;
+    font-size: 0.8rem;
+  }
+
+  .idyll-scroll-text h3 {
+    margin: 0.5rem 0;
+  }
+
+  .idyll-scroll-text .idyll-step {
+    margin: 0.5rem;
+    padding: 0rem 1rem;
   }
 }
