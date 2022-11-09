@@ -21,10 +21,11 @@
     ### Contents
 
     [ul]
-      [li][Indented Charts](#indented-charts)[/li]
-      [li][Icicle Plots](#icicle-plots)[/li]
-      [li][Conclusion](#conclusion)[/li]
-      [li][Appendix: About, References](#about)[/li]
+      [li][b][Indented Charts](#indented-charts)[/b][/li]
+      [li][b][Icicle Plots](#icicle-plots)[/b][/li]
+      [li][b][Conclusion](#conclusion)[/b][/li]
+      [li][References](#references)[/li]
+      [li][About](#about)[/li]
     [/ul]
   [/Aside]
 [/div]
@@ -354,9 +355,10 @@ For following up on more specific hierarchy visualization approaches or with imp
 * [Treevis.net: A Visual Bibliography of Tree Visualization](https://treevis.net)
 * [d3-hierarchy: 2D layout algorithms for visualizing hierarchical data (D3js)](https://github.com/d3/d3-hierarchy)
 
+# References
+[Cite.References/]
+
 # About
 
 * This article was created using [Idyll](https://idyll-lang.org) and [D3.js](https://d3js.org/).
 * The source code is available on [GitHub](https://github.com/vis-uni-bamberg/hierarchy-vis) under MIT license.
-
-[Cite.References/]

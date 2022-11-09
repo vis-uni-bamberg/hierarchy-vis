@@ -148,6 +148,10 @@ input {
   fill: url(#gradient);
 }
 
+#references {
+  display: none;
+}
+
 @media all and (max-width: 1000px) {
   .d3-component svg {
     max-height: 200px;
@@ -169,8 +173,6 @@ input {
   size: A4;
   margin: 25mm 25mm 20mm 25mm;
 }
-
-
 
 @media print {
 
