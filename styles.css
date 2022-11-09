@@ -53,8 +53,10 @@ input {
 
 .centered {
   text-align: center;
-  border-top: 2px solid var(--highlighting);;
-  border-bottom: 2px solid var(--highlighting);;
+  border-top: 2px solid var(--highlighting);
+  ;
+  border-bottom: 2px solid var(--highlighting);
+  ;
   padding: 1rem 0;
   margin-top: 4rem;
   margin-bottom: 4rem;
@@ -97,7 +99,7 @@ input {
   align-items: center;
 }
 
-.row > div {
+.row>div {
   margin: 0 0.5rem;
 }
 
@@ -156,7 +158,7 @@ input {
   }
 }
 
-@media all and (max-width: 1240px) {
+@media screen and (max-width: 1240px) {
   .aside {
     position: static;
     width: 100%;
@@ -165,30 +167,54 @@ input {
 
 @page {
   size: A4;
-  margin: 11mm 17mm 17mm 17mm;
+  margin: 25mm 25mm 20mm 25mm;
 }
 
 
 
 @media print {
-  
+
   .fixed {
     display: none;
   }
 
-  .article-header{
+  .article-header {
     box-shadow: none;
     background-color: none;
     background-image: none;
     color: black !important;
   }
 
-  .idyll-text-container h1{
+  .aside {
+    display: block;
+    position: absolute;
+    width: 175px;
+    left: 475px !important;
+    font-size: 0.9rem;
+    box-shadow: none !important;
+  }
+
+  .toc .aside {
+    right: inherit;
+    top: 200px;
+  }
+
+  .idyll-text-container {
+    max-width: 450px;
+    margin: 0;
+  }
+
+  .idyll-text-container h1 {
     page-break-before: always;
     padding-top: 10rem;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     page-break-after: avoid;
   }
 
@@ -224,7 +250,8 @@ input {
   }
 
   .idyll-scroll-text h3 {
-    margin: 0.5rem 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
   }
 
   .idyll-scroll-text .idyll-step {
